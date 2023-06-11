@@ -7,4 +7,6 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
         CREATE USER grampswebuser WITH CREATEDB PASSWORD '${POSTGRES_PASSWORD_GRAMPS_USER}';
         CREATE DATABASE grampswebuser;
         GRANT ALL PRIVILEGES ON DATABASE grampswebuser TO grampswebuser;
+        \connect grampswebuser;
+        GRANT ALL PRIVILEGES ON SCHEMA public TO grampswebuser;
 EOSQL
