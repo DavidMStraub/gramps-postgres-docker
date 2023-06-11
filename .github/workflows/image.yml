@@ -27,5 +27,5 @@ jobs:
       - name: tag and push image
         run: |
           docker build --push \
-            --tag ghcr.io/DavidMStraub/gramps-postgres:latest \
+            --tag ghcr.io/davidmstraub/gramps-postgres:latest \
             --platform linux/amd64,linux/arm/v7,linux/arm64 .
