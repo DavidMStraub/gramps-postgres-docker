@@ -9,4 +9,5 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
         GRANT ALL PRIVILEGES ON DATABASE grampswebuser TO grampswebuser;
         \connect grampswebuser;
         GRANT ALL PRIVILEGES ON SCHEMA public TO grampswebuser;
+        CREATE EXTENSION IF NOT EXISTS vector;
 EOSQL
